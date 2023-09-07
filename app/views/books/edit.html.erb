@@ -1,6 +1,6 @@
  
   <% if @book.errors.any? %>
-  <h2><%= @book.errors.count %>prohibited this user from being saved</h2>
+  <h2><%= @book.errors.count %> errors prohibited this user from being saved</h2>
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -26,7 +26,8 @@
 <%= f.submit 'Update Book' %>
 </div>
 
-<div>
-  <a href="/books">Back</a>
-</div>
+ <%= link_to 'Show', book_path(@book.id) %>
+
+<a href="/books">Back</a>
+  
 <% end %>
